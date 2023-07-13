@@ -1,10 +1,7 @@
 import { useState, useReducer, useEffect } from "react";
 import { createContext } from "react";
 
-
-
-
-export const ThemeContext = createContext(null);
+ export const ThemeContext = createContext(null);
 
 let initalCart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -33,7 +30,7 @@ const reducer = (state, action) => {
                 }
             })
          }
-        }
+        } 
         case "increase": {
          return state.map((e)=>{
             if(e.id === action.id){
@@ -68,30 +65,36 @@ const reducer = (state, action) => {
 }
 
 
-
 const Theme = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, initalCart)
     const [theme, setTheme] = useState("light")
     const [total,setTotal]=useState(0)
+    const [showMenu,setshowMenu]=useState(false)
     console.log(state)
+
+
+    const toggleMenu=()=>{
+        setshowMenu(!showMenu)
+    }
+
 
     const darkmode = () => {
         setTheme("dark")
     } 
     const lightmode = () => {
         setTheme("light")
-    }
+    }   
 
   useEffect(()=>{
-     const val= (state.reduce((p,e)=>(p + (e.price * e.quantity)),0)).toFixed(2)
-     setTotal(val)
+     const val = state.reduce((p,e) => (p + (e.price * e.quantity)),0)
+    //  setTotal(val.toFixed(2))
     localStorage.setItem("cart", JSON.stringify(state))
   },[state])
 
 
     return (
-        <ThemeContext.Provider value={{ theme, darkmode, lightmode, state, dispatch,total }} >
+        <ThemeContext.Provider value={{ theme, darkmode, lightmode, state, dispatch, total,showMenu,toggleMenu}} >
             {children}
         </ThemeContext.Provider>
     )

@@ -63,19 +63,23 @@ const Slider = () => {
         <div className="slider" style={{backgroundColor: theme === "light" ? " #2B4865" :"black "}} >
             <div className="sliderwrap">
                 <div className="sliderleft">
-                    <h3>Name of item: <br /> {Newdata[count%Newdata.length]?.title}</h3>
+                     <div className="slidetext">
+                     <h3>Name of item: <br /> {Newdata[count%Newdata.length]?.title}</h3>
                     <h3>Description: <br />  {Newdata[count%Newdata.length]?.description}</h3>
+                     </div>
+                    
                     <button className="shopnow" >Shop Now</button>
-                </div>
+                    </div>
+                       
                 <div className="sliderright">
                     <img src={Newdata[count%Newdata.length]?.image} alt="" />
                 </div>
-                <img src="" alt="" />
+          
                 <div className="iconslide">
                     <BsFillArrowLeftCircleFill className="leftarrow" onClick={subSlider} />
                     <BsFillArrowRightCircleFill className="rightarrow" onClick={addSlider} />
                 </div>
-
+               
             </div>
 
         </div>

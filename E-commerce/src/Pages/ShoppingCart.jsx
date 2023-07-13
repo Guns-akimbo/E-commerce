@@ -13,10 +13,8 @@ const ShoppingCart = () => {
         type: "deleted",
         id:id
       })
-
   }
-
-  const increaseQty=(id)=>{
+ const increaseQty=(id)=>{
     dispatch({
       type: "increase",
       id:id
@@ -33,7 +31,8 @@ const ShoppingCart = () => {
 }
 
   
-console.log(total)
+// console.log(total)
+
   return (
     <div className="Cart" style={{ backgroundColor: theme === "light" ? " #2B4865" : "black " }}>
 
@@ -53,7 +52,7 @@ console.log(total)
               <div className="deletearea">
                 <h3 onClick={()=> removeitem(props.id)}  style={{color:"red",fontSize:"25px"}}>Remove</h3>
                 <div className="addedarea">
-                  <h1 onClick={()=>decreaseQty(props.id,props.quantity)} >-</h1>
+                  <h1 onClick={()=>decreaseQty(props.id,props.quantity)}>-</h1>
                    <h1>{props.quantity}</h1>
                   <h1 onClick={()=>increaseQty(props.id)}>+</h1>
                 </div>

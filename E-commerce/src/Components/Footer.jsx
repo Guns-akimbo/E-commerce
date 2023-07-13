@@ -5,27 +5,25 @@ const Footer = () => {
 
 
         <div className="footer">
-
             <div className="footerwrap">
                 <div className="leftfooter">
-                    <img src="" alt="" />
                     <h3>Nigeria's Most trusted Online Market</h3>
                 </div>
                 <div className="inifooter" >
                     <h3>Get to Know Us</h3>
-                    <p>Careers</p>
-                    <p> Blog</p>
-                    <p>About Alt market</p>
-                    <p>Investor Relations</p>
+                    <h3>Careers</h3>
+                    <h3> Blog</h3>
+                    <h3>About Alt market</h3>
+                    <h3>Investor Relations</h3>
                 </div>
                 <div className="midfooter ">
                     <div className="midfowrap">
                         <h4>Contact Us</h4>
-                        <h5>enquires @ altmarket.com</h5>
-                        <h3>
+                        <h4>enquires @ altmarket.com</h4>
+                        <h4>
                             Contact Us
                             enquiries@altmarket.com
-                            victor Land Plaza, Plot 9,<br /> Block 232 Lekki-Epe Expressway, <br /> By 3rd Round About, Lekki Phase 1, Lagos.</h3>
+                            victor Land Plaza, <br /> Plot 9,Block 232 Lekki-Epe Expressway, <br /> By 3rd Round About, Lekki Phase 1, Lagos.</h4>
                     </div>
 
                 </div>
