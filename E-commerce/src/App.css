@@ -834,12 +834,13 @@ a.active{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image:url(./assets/nature.gif) ;
-    background: linear-gradient(
+    background-image:url(./assets/new\ image.webp) ;
+  
+    /* background: linear-gradient(
         rgba(255,255,255,0.7),
         rgba(255,255,255,)
         
-    );
+    ); */
     background-size: cover;
     background-position: center;
 }
@@ -847,7 +848,7 @@ a.active{
 .form{
     background-color: white;
     /* padding: 0px,60px; */
-    border-radius: 8px;
+    border-radius: 14px;
     width: 480px;
     height: 770px;
     margin-top: 3px;
@@ -855,6 +856,8 @@ a.active{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 
 .register{

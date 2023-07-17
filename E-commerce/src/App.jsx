@@ -16,6 +16,7 @@ import { useContext } from "react"
 import { ThemeContext } from "./Context/Theme"
 import LoginPage from "./Login/LoginPage"
 // import Forminput from "./Form/Forminput"
+import SignupPage from "./Login/SignupPage"
 
 
 const App = () => {
@@ -38,10 +39,11 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/features" element={<Features />} />
-            <Route path="/login" element={<LoginPage/>} />
+            <Route path="/signup" element={<LoginPage/>} />
+            <Route path="/loginpage" element={<SignupPage/>} />
             <Route path="/home" element={<Home />} />
             <Route path="/detail/:id" element={<Detail />} />
-            <Route path="/shopcart" element={<ShoppingCart />} />
+            <Route path="/shopcart" element={<ShoppingCart />} /> 
 
           </Routes>
         </div>

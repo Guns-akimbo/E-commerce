@@ -1,9 +1,12 @@
 import { useRef, useState } from "react"
 import Forminput from "../Form/Forminput"
+import axios from "axios"
+import {  useNavigate } from "react-router-dom"
 
 
 const LoginPage = () => {
-
+    const navigate=useNavigate()
+    const [load,setLoad]=useState(false)
     const [values, setValues] = useState({
         username: "",
         email: "",
@@ -49,7 +52,7 @@ const LoginPage = () => {
             placeholder: "Password",
             errorMessage:"Password should be a 20 character and should include one letter,one number and one special character",
             label: "Password",
-            pattern:" ^[A-Z-z0-9]{3,16}$",
+            pattern: "^[A-Z-z0-9]{3,16}$",
             required:true
         },
         {
@@ -64,16 +67,33 @@ const LoginPage = () => {
         },
     ]
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        try{
+            setLoad(true)
+            const {username,email,password}=values
+            const api="https://eflexshop.onrender.com/user/register"
+            const res= await axios.post(api,{name:username,email,password})
+            console.log(res)
+            setLoad(false)
+            navigate("/loginpage") 
+        }catch(err){
+            setValues({
+                username:"",
+                email:"",
+                password:"",
+                confirmPassword:""
+            })
+            setLoad(false)
+            console.error(err)
+        }
     };
 
     const onChange =(e)=>{
         setValues({...values,[e.target.name]: e.target.value})
     }
 
-    console.log(values)
+    // console.log(values)
     return (
         <div className="Loginpage">
             <form className="form" onSubmit={handleSubmit}>
@@ -86,7 +106,7 @@ const LoginPage = () => {
                       onChange={onChange}/>
                 ))}
 
-                <button className="subBtn">Submit</button>
+                <button disabled={load} className="subBtn">Submit</button>
             </form>
 
 

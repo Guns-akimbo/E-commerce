@@ -59,8 +59,10 @@ const Header = ({ Logo }) => {
                  
                     <div className="ini"></div>
                     <div className="buttonwrap">
-                        <button to="loginpage" className="login">Login</button>
-                        <button className="signup">SignUp</button>
+                        {/* <button to="loginpage" className="login">Login</button>
+                        <button className="signup">SignUp</button> */}
+                            <Link to="/signup">Signup</Link>
+                        <Link to ="/loginpage" >Logininto</Link>
                     </div>
                 </div>
             </div>
@@ -75,7 +77,7 @@ const Header = ({ Logo }) => {
                         <h3>MEN</h3>
                         <h3>WOMEN</h3>
                         <h3>KIDS</h3>
-                        <Link to="/login">Login</Link>
+                    
                     </div>
                     <Link to="/shopcart" style={{textDecoration:"none", color:"black"}} className="cartright" >
                         <h3>Shopping Cart({state.length})</h3>
