@@ -18,7 +18,7 @@ const Detail = () => {
             .then(res => res.json())
             .then(res => setData(res))
     }
-    console.log(data)
+    // console.log(data)
  
     useEffect(() => {
         getallData()

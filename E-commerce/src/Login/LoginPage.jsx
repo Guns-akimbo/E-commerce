@@ -1,12 +1,12 @@
 import { useRef, useState } from "react"
 import Forminput from "../Form/Forminput"
 import axios from "axios"
-import {  useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 const LoginPage = () => {
-    const navigate=useNavigate()
-    const [load,setLoad]=useState(false)
+    const navigate = useNavigate()
+    const [load, setLoad] = useState(false)
     const [values, setValues] = useState({
         username: "",
         email: "",
@@ -22,27 +22,27 @@ const LoginPage = () => {
             name: "username",
             type: "text",
             placeholder: "Username",
-            errorMessage:"Username should be 3-16 characters and shouldn't include any special characters",
-            label:"Username",
-            pattern:"^[A-Z-z0-9]{3,16}$",
-            required:true
-        
+            errorMessage: "Username should be 3-16 characters and shouldn't include any special characters",
+            label: "Username",
+            pattern: "^[A-Z-z0-9]{3,16}$",
+            required: true
+
         },
         {
             id: 2,
             name: "email",
             type: "email",
             placeholder: "Email",
-            errorMessage:"It should be an email",
+            errorMessage: "It should be an email",
             label: "Email",
-            required:true
+            required: true
         },
         {
             id: 3,
             name: "birthday",
             type: "date",
             placeholder: "Birthday",
-            errorMessage:"",
+            errorMessage: "",
             label: "Birthday"
         },
         {
@@ -50,47 +50,47 @@ const LoginPage = () => {
             name: "password",
             type: "password",
             placeholder: "Password",
-            errorMessage:"Password should be a 20 character and should include one letter,one number and one special character",
+            errorMessage: "Password should be a 20 character and should include one letter,one number and one special character",
             label: "Password",
             pattern: "^[A-Z-z0-9]{3,16}$",
-            required:true
+            required: true
         },
         {
             id: 5,
             name: "confirmPassword",
             type: "password",
             placeholder: "Confirm Password",
-            errorMessage:"Password don't match",
+            errorMessage: "Password don't match",
             label: "Confirm Password",
-            pattern:values.password,
-            required:true
+            pattern: values.password,
+            required: true
         },
     ]
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
+        try {
             setLoad(true)
-            const {username,email,password}=values
-            const api="https://eflexshop.onrender.com/user/register"
-            const res= await axios.post(api,{name:username,email,password})
+            const { username, email, password } = values
+            const api = "https://eflexshop.onrender.com/user/register"
+            const res = await axios.post(api, { name: username, email, password })
             console.log(res)
             setLoad(false)
-            navigate("/loginpage") 
-        }catch(err){
+            navigate("/loginpage")
+        } catch (err) {
             setValues({
-                username:"",
-                email:"",
-                password:"",
-                confirmPassword:""
+                username: "",
+                email: "",
+                password: "",
+                confirmPassword: ""
             })
             setLoad(false)
             console.error(err)
         }
     };
 
-    const onChange =(e)=>{
-        setValues({...values,[e.target.name]: e.target.value})
+    const onChange = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value })
     }
 
     // console.log(values)
@@ -100,10 +100,10 @@ const LoginPage = () => {
                 <h1 className="register"> Register</h1>
                 {inputs.map((input) => (
                     <Forminput
-                     key={input.id}
-                     {...input} 
-                     value={values[input.name]}
-                      onChange={onChange}/>
+                        key={input.id}
+                        {...input}
+                        value={values[input.name]}
+                        onChange={onChange} />
                 ))}
 
                 <button disabled={load} className="subBtn">Submit</button>

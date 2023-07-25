@@ -66,7 +66,7 @@ const reducer = (state, action) => {
 
 
 const Theme = ({ children }) => {
-
+    const  [watch,setWatch]=useState(JSON.parse(localStorage.getItem("user")))
     const [state, dispatch] = useReducer(reducer, initalCart)
     const [theme, setTheme] = useState("light")
     const [total, setTotal] = useState(0)
@@ -92,9 +92,13 @@ const Theme = ({ children }) => {
         localStorage.setItem("cart", JSON.stringify(state))
     }, [state])
 
+    useEffect(() => {
+    //    setisLoggedIn(JSON.parse(localStorage.getItem("user")))
+    },)
+
 
     return (
-        <ThemeContext.Provider value={{ theme, darkmode, lightmode, state, dispatch, total, showMenu, toggleMenu }} >
+        <ThemeContext.Provider value={{ theme, darkmode, lightmode, state, dispatch, total, showMenu, toggleMenu,watch,setWatch}} >
             {children}
         </ThemeContext.Provider>
     )

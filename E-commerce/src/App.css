@@ -53,20 +53,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0px  ;
 }
 
 .header2wrap {
     width: 80%;
     height: 100%;
-    align-items: center;
     display: flex;
-    /* border: 1px solid white; */
-    gap: 4px;
-    /* justify-content: space-around; */
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: yellow; */
 }
 
 .logowrap {
-    width: 10%;
+   width: 13%;
     height: 100%;
     display: flex;
     font-size: 20px;
@@ -77,14 +77,9 @@ body {
 }
 
 .logowrap img {
-    width: 100%;
+    width: 50%;
     height: 100%;
     border-radius: 5px;
-}
-
-.freeup{
- width: 15%;
- /* background-color: green; */
 }
 
 .aboutwrap {
@@ -104,18 +99,15 @@ a.active{
     color: red;
 }
 
-.ini{
-    width: 30%;
-}
 
 .buttonwrap {
-    width: 20%;
+    /* width: 20%; */
     height: 100%;
     /* background-color: red; */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 50px;
 
 }
 
@@ -185,9 +177,9 @@ a.active{
 }
 
 .cartdivwrap {
-    width: 80%;
+    /* width: 80%; */
     height: 100%;
-    /* background-color: yellowgreen; */
+    /* background-color: blue; */
     display: flex;
 }
 
@@ -204,7 +196,7 @@ a.active{
 }
 
 .cartright {
-    width: 50%;
+    /* width: 50%; */
     height: 100%;
     background-color: white;
     display: flex;
@@ -221,13 +213,13 @@ a.active{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    /* background-color: green; */
 }
 
 .categorywrap {
     width: 80%;
     height: 100%;
-    background-color: white;
+    /* background-color: red; */
     /* font-size: 15px; */
     font-family: monospace;
     display: flex;

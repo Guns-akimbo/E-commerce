@@ -28,18 +28,19 @@ const Landingpage = ({ }) => {
 
     }
 
-    const getApiDataByid = (id) => {
-        const url = `https://fakestoreapi.com/products/${id}`
-        // console.log(url)
-        fetch(url)
-            .then(res => res.json())
-            .then(res => setoneData(res))
-    }
+    // const getApiDataByid = (id) => {
+    //     const url = `https://fakestoreapi.com/products/${id}`
+    //     // console.log(url)
+    //     fetch(url)
+    //         .then(res => console.log(res.json()))
+    //         // .then(res => console.log(res))
+            
+    // }
 
     const showProductwithid = (id) => {
         setPop(true)
         // console.log(id)
-        getApiDataByid(id)
+        // getApiDataByid(id)
 
     }
 

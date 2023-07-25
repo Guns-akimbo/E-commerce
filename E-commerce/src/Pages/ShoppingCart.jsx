@@ -29,6 +29,13 @@ const ShoppingCart = () => {
     })
 
 }
+  const totalitem=(quantity)=>{
+    dispatch({
+      type: "reduce",
+    
+    })
+
+}
 
   
 // console.log(total)
